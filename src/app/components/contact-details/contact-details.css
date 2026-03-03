@@ -1,0 +1,192 @@
+ body {
+     background-color: #ffffff;
+ }
+
+ .contact-details {
+     align-items: center;
+     margin-left: 30px;
+     font-family: "Century Gothic", Arial, sans-serif;
+
+     margin-top: 20px;
+     /* display: flex; */
+     /* flex-direction: column; */
+ }
+
+ .w-500 {
+     width: 500px;
+ }
+
+ .abs-right {
+     right: 0;
+ }
+
+ .header {
+     background-color: #3b8dbd;
+     color: white;
+     padding: 30px;
+     font-family: "Century Gothic", Arial, sans-serif;
+ }
+
+ .custom-nav {
+     background-color: #333;
+ }
+
+ /* .form-control{
+        box-shadow: 0 0 0 0.25rem #ff3b3b;;
+    } */
+
+ .form-control-invalid {
+     box-shadow: 0 0 0 0.25rem rgba(247, 7, 31, 0.867);
+ }
+
+ .form-control-invalid:focus {
+     box-shadow: 0 0 0 0.25rem rgba(247, 7, 31, 0.867);
+ }
+
+ .list-group {
+     border: 1px solid black;
+     border-radius: 1px;
+ }
+
+ .custom-nav .nav-link {
+     color: white;
+     font-weight: 500;
+ }
+
+ .custom-nav .nav-link:hover {
+     color: #ddd;
+ }
+
+ .contact-card {
+     cursor: pointer;
+     transition: all 0.3s ease;
+ }
+
+ .contact-card:hover {
+     background-color: #e9ecef;
+ }
+
+ .contact-card.active {
+     background-color: #cfe2f3;
+ }
+
+ .contact-email,
+ .contact-phone {
+     font-size: 0.85rem;
+     color: #666;
+ }
+
+ .details-title {
+     font-size: 2rem;
+     font-weight: 500;
+ }
+
+ .details-label {
+     font-weight: 600;
+     display: inline-block;
+     width: 80px;
+ }
+
+ .hw15 {
+     height: 15px;
+     width: 15px;
+     margin-bottom: 1px;
+ }
+
+ .mt7 {
+     margin-top: 2px;
+ }
+
+ .page {
+     background-color: white;
+ }
+
+ .custom-card {
+     /* border: 8px solid #555; */
+     border-radius: 20px;
+     padding: 30px;
+     background: #f8f9fa;
+     display: none;
+ }
+
+ .outline-none:focus,
+ .outline-none {
+     outline: none;
+     border: 0;
+ }
+
+ .closebutton {
+     align-items: end;
+     justify-content: end;
+ }
+
+ .btn-sm:hover {
+     color: red;
+ }
+
+ .btn-add {
+     background: #4CAF50;
+     color: white;
+     padding: 8px 30px;
+     border: none;
+ }
+
+ .btn-add:hover {
+     background: #3f8e41;
+     color: white;
+ }
+
+ .p-relative {
+     position: relative;
+ }
+
+ .p-absolute {
+     position: absolute;
+ }
+
+ .fa-trash {
+     font-size: 24px;
+ }
+
+ @media (max-width: 768px) {
+
+     .mr-auto {
+         margin-right: auto;
+     }
+
+     .contact-details {
+         position: fixed;
+         bottom: 0;
+         left: 0;
+         right: 0;
+
+         background: rgb(255, 255, 255);
+         border-radius: 20px 20px 0 0;
+
+         padding: 20px;
+         z-index: 1000;
+
+         box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.2);
+
+         animation: slideUp 0.3s ease-in-out;
+     }
+
+     .contact-details::before {
+         content: "";
+         position: fixed;
+         inset: 0;
+         background: rgba(0, 0, 0, 0.4);
+         z-index: -1;
+     }
+
+ }
+
+ @keyframes slideUp {
+     from {
+         transform: translateY(100%);
+     }
+
+     to {
+         transform: translateY(0);
+     }
+ }

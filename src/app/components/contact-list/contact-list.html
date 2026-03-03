@@ -1,0 +1,66 @@
+<div class="d-flex container">
+    <div class="col-md-4 mt-20 p-relative">
+        <h5 class="mb-3 ml-3">CONTACTS</h5>
+
+
+
+        <div class="d-flex flex-direction-row justify-content-between align-items-center ">
+
+            <div class="px-1 mb-1">
+                <input type="text" class="form-control" placeholder="Search"
+                    (input)="filterUsersByCategory($event.target.value)" />
+            </div>
+            <div>
+                <label for="sort">Sort By:</label>
+                <select id="sort" (change)="sort($event)">
+                    <option value="Select to Sort" selected>
+                        Select To Sort
+                    </option>
+                    @for(option of sortOptions;track option.value){
+                    <option [value]="option.value">
+                        {{ option.label }}
+                    </option>}
+                </select>
+            </div>
+        </div>
+        <label class="mt-2" for="noOfContacts">No of Contacts to Display :</label>
+        <select id="noOfContacts" (change)="setContactsPerPage($event)">
+            @for (num of [1,2,3,4,5,6,7,8,9,10]; track num) {
+            @if(num === 5){
+            <option [value]="num" selected>
+                {{ num }}
+            </option>
+            }
+            @else{
+            <option [value]="num">
+                {{ num }}
+            </option>
+            }}
+        </select>
+        <div class="overflow-y mt-2">
+            @for (contact of paginatedUsers(); track contact.id){
+            <div class="list-group-item contact-card " routerLinkActive="active" [routerLink]="['contact',contact.id]">
+                <h5 class="mb-1">{{contact.name | uppercase}}</h5>
+                <div class="contact-email">{{contact.email | lowercase}}</div>
+                <div class="contact-phone">+91 {{contact.mobile}}</div>
+            </div>
+            }
+        </div>
+
+        @if(paginatedUsers().length){
+        <div class="d-flex justify-content-between mt-1 p-absolute">
+            <button class="btn btn-sm btn-secondary" (click)="setcurrentPageVal(-1)" [disabled]="currentPage() === 1">
+                &larr; Previous
+            </button>
+
+            <span>Page {{ currentPage() }} of {{ totalPages() }}</span>
+
+            <button class="btn btn-sm btn-secondary" (click)="setcurrentPageVal(1)"
+                [disabled]="currentPage() === totalPages()">
+                Next &rarr;
+            </button>
+        </div>
+        }
+    </div>
+    <router-outlet></router-outlet>
+</div>

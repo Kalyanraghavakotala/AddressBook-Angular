@@ -1,0 +1,125 @@
+ body {
+     background-color: #ffffff;
+ }
+
+ .header {
+     background-color: #3b8dbd;
+     color: white;
+     padding: 30px;
+     font-family: "Century Gothic", Arial, sans-serif;
+ }
+
+ .t-none {
+     text-decoration: none;
+     color: #ffffff;
+ }
+
+ .custom-nav {
+     background-color: #333;
+ }
+
+ .active {
+     color: rgb(0, 0, 0) !important;
+     background-color: white;
+ }
+
+ .form-control-invalid {
+     box-shadow: 0 0 0 0.25rem rgba(247, 7, 31, 0.867);
+ }
+
+ .form-control-invalid:focus {
+     box-shadow: 0 0 0 0.25rem rgba(247, 7, 31, 0.867);
+ }
+
+ .list-group {
+     border: 1px solid black;
+     border-radius: 1px;
+ }
+
+ .custom-nav .nav-link {
+     color: white;
+     font-weight: 500;
+ }
+
+ .custom-nav .nav-link:hover {
+     color: #ddd;
+ }
+
+ .contact-card {
+     transition: all 0.3s ease;
+ }
+
+ .contact-card:hover {
+     background-color: #e9ecef;
+ }
+
+ .contact-card.active {
+     background-color: #cfe2f3;
+ }
+
+ .contact-email,
+ .contact-phone {
+     font-size: 0.85rem;
+     color: #666;
+ }
+
+ .details-title {
+     font-size: 2rem;
+     font-weight: 500;
+ }
+
+ .details-label {
+     font-weight: 600;
+     display: inline-block;
+     width: 80px;
+ }
+
+ .hw15 {
+     height: 15px;
+     width: 15px;
+ }
+
+ .mt7 {
+     margin-top: 7px;
+ }
+
+ .page {
+     background-color: white;
+ }
+
+ .nav-item :hover {
+     background-color: gray;
+ }
+
+ .custom-card {
+     border-radius: 20px;
+     padding: 30px;
+     background: #f8f9fa;
+     display: none;
+ }
+
+ .outline-none:focus,
+ .outline-none {
+     outline: none;
+     border: 0;
+ }
+
+ .btn-add {
+     background: #4CAF50;
+     color: white;
+     padding: 8px 30px;
+     border: none;
+ }
+
+ .btn-add:hover {
+     background: #3f8e41;
+     color: white;
+ }
+
+ .p-relative {
+     position: relative;
+ }
+
+ .p-absolute {
+     position: absolute;
+ }

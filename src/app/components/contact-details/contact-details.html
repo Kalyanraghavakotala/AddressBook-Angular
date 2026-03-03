@@ -1,0 +1,41 @@
+@if (users()) {
+<div class="">
+    <div class="contact-details ">
+        <div class="d-flex justify-content-between align-items-center mb-3 p-relative w-500">
+            <div class="details-title"> {{users().name}}</div>
+            <div class="mr-auto ">
+                <button class="btn btn-sm me-2" (click)="edit()">
+                    <img [src]="editIcon" class="hw15" alt="edit"> EDIT
+                    
+                </button>
+                <button class="btn btn-sm" (click)="delete()">
+                    <img [src]="deleteIcon" class="mt7" srcset=""> DELETE
+                </button>
+            </div>
+        </div>
+
+        <p><span class="details-label">Email:</span> {{users().email}}</p>
+        <p>
+            <span class="details-label">Mobile:</span>+91 {{users().mobile}} <br>
+            @if(users().landline){
+            <span class="details-label">Landline:</span>{{users().landline}}
+            }
+        </p>
+        <p>
+            <span class="details-label">Website:</span>
+            <a [href]="users().website">{{users().website}}</a>
+        </p>
+        <div style="display: flex; flex-direction: row;">
+            <span class="details-label">Address:</span>
+            <div style="white-space:pre-line;">
+                {{users().address}}
+            </div>
+        </div>
+        <div class="button d-flex closebutton">
+        <button type="submit" class="btn btn-danger" (click)="close()">
+                    CLOSE
+        </button>
+        </div>
+    </div>
+</div>
+}

@@ -1,0 +1,102 @@
+<div class="container form-wrapper p-absolute">
+    <div class="card custom-card shadow" id="contactCard">
+
+        <form id="contact-form" #contactForm="ngForm" (ngSubmit)="saveContact(contactForm)">
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold" for="name">Name <span class="color-red"> *</span></label>
+                <input type="text" class="form-control" name="name" required minlength="3" #name="ngModel"
+                     [(ngModel)]="contactData().name">
+                @if(name.invalid && name.touched){
+                <div class="text-danger">
+                    @if(name.errors?.['required']){
+                    <small>Name is required</small>
+                    }
+                    @if(name.errors?.['minlength']){
+                    <small>Minimum 3 characters required</small>
+                    }
+                </div>
+                }
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold" for="email">Email <span class="color-red"> *</span></label>
+                <input type="email" class="form-control" name="email" required email #email="ngModel"
+                    [(ngModel)]="contactData().email">
+                @if(email.invalid && email.touched){
+                <div class="text-danger">
+                    @if(email.errors?.['required']){
+                    <small>Email is required</small>
+                    }
+                    @if(email.errors?.['email']){
+                    <small>Invalid email format</small>
+                    }
+                </div>
+                }
+            </div>
+
+            <div class="row mb-3">
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold" for="mobile">Mobile <span class="color-red"> *</span></label>
+                    <input type="number" inputMode="numeric"   inputmode="numeric"  class="form-control number-input" name="mobile" required pattern="^[0-9]{10}$"
+                        #mobile="ngModel" [(ngModel)]="contactData().mobile">
+
+                    @if(mobile.touched && mobile.invalid){
+                    <div class="text-danger">
+                        @if(mobile.errors?.['required']){
+                        <small>Mobile is required</small>
+                        }
+                        @if(mobile.errors?.['pattern']){
+                        <small>Enter valid 10 digit number</small>}
+                    </div>
+                    }
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label fw-semibold" for="landline">Landline</label>
+                    <input type="number" inputMode="numeric" class="form-control number-input" name="landline" pattern="^[0-9]*$" #landline="ngModel"
+                        [(ngModel)]="contactData().landline">
+                    @if(landline.touched && landline.invalid){
+                    <div class="text-danger">
+                        <small>Invalid landline number</small>
+                    </div>
+                    }
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label fw-semibold" for="website">Website</label>
+                <input type="text" class="form-control" name="website" pattern="https?://.+" #website="ngModel"
+                    [(ngModel)]="contactData().website">
+                @if(website.invalid && website.touched){
+                <div class="text-danger">
+                    <small>Enter valid website (http:// or https://)</small>
+                </div>}
+            </div>
+
+            <div class="mb-4">
+                <label class="form-label fw-semibold" for="address">Address <span class="color-red"> *</span></label>
+                <textarea class="form-control" rows="4" name="address" required #address="ngModel"
+                    [(ngModel)]="contactData().address"></textarea>
+                @if(address.invalid && address.touched){
+                <div class="text-danger">
+                    <small>Address is required</small>
+                </div>}
+            </div>
+
+            <div class="text-end">
+                <button type="button" class="btn" (click)="cancel()">Cancel</button>
+                @if(contactData().id){
+                <button type="submit" class="btn btn-add" [class.disabled1]="contactForm.invalid">
+                    Edit
+                </button>
+            }
+            @else {
+                <button type="submit" class="btn btn-add" [class.disabled1]="contactForm.invalid">
+                    Add
+                </button>
+            }
+            </div>
+        </form>
+    </div>
+</div>

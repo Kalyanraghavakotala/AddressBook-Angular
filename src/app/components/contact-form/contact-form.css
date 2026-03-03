@@ -1,0 +1,101 @@
+ input.ng-invalid.ng-touched,
+ textarea.ng-invalid.ng-touched {
+     border: 1px solid red;
+ }
+ .color-red{
+    color: #ff0000;
+ }
+
+ .form-control-invalid {
+     box-shadow: 0 0 0 0.25rem rgba(247, 7, 31, 0.867);
+ }
+
+ .form-control-invalid:focus {
+     box-shadow: 0 0 0 0.25rem rgba(247, 7, 31, 0.867);
+ }
+ .disabled1 {
+  cursor: not-allowed !important;
+  opacity: 0.6 !important;
+}
+
+.number-input{
+    -moz-appearance: none !important;
+}
+
+.number-input::-webkit-outer-spin-button,
+    .number-input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+ @media screen and (max-width: 426px) {
+     .p-absolute {
+         position: static !important;
+     }
+
+     #contactCard {
+         position: absolute;
+         left: 0;
+
+     }
+ }
+
+ .details-title {
+     font-size: 2rem;
+     font-weight: 500;
+ }
+
+ .details-label {
+     font-weight: 600;
+     display: inline-block;
+     width: 80px;
+ }
+
+ .hw15 {
+     height: 15px;
+     width: 15px;
+ }
+
+ .mt7 {
+     margin-top: 7px;
+ }
+
+ .page {
+     background-color: white;
+ }
+
+ .custom-card {
+     border-radius: 20px;
+     padding: 30px;
+     background: #f8f9fa;
+     width: 70%;
+ }
+
+ .outline-none:focus,
+ .outline-none {
+     outline: none;
+     border: 0;
+ }
+
+ .btn-add {
+     background: #4CAF50;
+     color: white;
+     padding: 8px 30px;
+     border: none;
+ }
+
+ .btn-add:hover {
+     background: #3f8e41;
+     color: white;
+ }
+
+ .p-relative {
+     position: relative;
+     max-width: -webkit-fill-available;
+ }
+
+ .p-absolute {
+     position: absolute;
+     max-width: -webkit-fill-available;
+ }
+
